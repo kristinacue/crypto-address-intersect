@@ -1,5 +1,5 @@
 
-import { types } from "./actions/walletTypes";
+import { types } from '../actions/walletTypes';
 
 const walletData = (state, action) => {
 
@@ -14,8 +14,10 @@ const walletData = (state, action) => {
         };
     };
 
+    console.log('made it to reducers')
     switch(action.type){
         case types.SUBMIT:
+            console.log('made it to reducers')
             if(action.walletData.number === 1){
                 console.log(action.walletData.address);
                 return {
@@ -37,6 +39,13 @@ const walletData = (state, action) => {
 
         default:
             return state;
+
+
+        // case types.REMOVE:
+
+
+        // default:
+        //     return state;
 
     };
 

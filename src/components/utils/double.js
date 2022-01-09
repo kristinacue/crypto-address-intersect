@@ -1,7 +1,6 @@
 
 export const findWallet = (walletAddress, walletData) => {
-
-    let walletDataCopy = walletData, transactions = [], count = 0;
+    let walletDataCopy = walletData.result, transactions = [], count = 0;
 
     for (let i = 0; i < walletDataCopy.result.length; i++) {
         if(walletAddress === walletDataCopy.result[i].to){
