@@ -10,5 +10,6 @@ export const findWallet = (walletAddress, walletData) => {
         // console.log(count);
     };
     console.log(`These wallets have interacted ${count} times over the last ${walletDataCopy.length} transactions`);
+    console.log('transactions', transactions)
     return transactions
 }
