@@ -23,43 +23,50 @@ const Wallets = () => {
         {/* <h3>This is Wallets</h3> */}
 
         {
-            firstWalletTransactions && firstWalletTransactions ?
+            firstWalletTransactions.transactions && firstWalletTransactions.transactions ?
             <div>
                 <h4>
                     The first wallet has had <strong>{firstWalletTransactions.length}</strong> transactions with the second wallet over the past {firstWalletData.length} transactions
                 </h4>
-                <h4>
-                    <a 
-                        href={`https://etherscan.io/tx/${firstWalletTransactions}`}
-                        target={'_blank'}
-                        rel='noreferrer'>
-                        https://etherscan.io/tx/${firstWalletTransactions}
-                    </a>
-                </h4>
+                {
+                    firstWalletTransactions.transactions && firstWalletTransactions.transactions.map((hash, index) => {
+                        return <h5 key={index}>
+                                    <a 
+                                        href={`https://etherscan.io/tx/${hash}`}
+                                        target={'_blank'} rel="noreferrer"
+                                        >
+                                        https://etherscan.io/tx/{hash}
+                                    </a>
+                                </h5>
+                    })
+                }
             </div> :
 
             <h5>No First Wallet Correlated Transactions Found</h5>
         }
 
-        {
-            secondWalletTransactions && secondWalletTransactions ?
+        {/* {
+            secondWalletTransactions.transactions && secondWalletTransactions.transactions ?
             <div>
                 <h4>
                     The second wallet has had <strong>{secondWalletTransactions.length}</strong> transactions with the first wallet over the past {secondWalletData.length} transactions
                 </h4>
-                <h4>
-                    <a 
-                        href={`https://etherscan.io/tx/${secondWalletTransactions}`}
-                        target={'_blank'}
-                        rel='noreferrer'>
-                        https://etherscan.io/tx/${secondWalletTransactions}
-                    </a>
-                </h4>
+                {
+                    secondWalletTransactions.transactions && secondWalletTransactions.transactions.map((hash, index) => {
+                        return <h5 key={index}>
+                                    <a 
+                                        href={`https://etherscan.io/tx/${hash}`}
+                                        target={'_blank'} rel="noreferrer"
+                                        >
+                                        https://etherscan.io/tx/{hash}
+                                    </a>
+                                </h5>
+                    })
+                }
             </div> :
 
             <h5>No Second Wallet Correlated Transactions Found</h5>
-        }
-
+        } */}
     </>;
 }
  
