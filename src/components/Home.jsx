@@ -1,6 +1,7 @@
 
 import React, {useEffect} from 'react';
 import WalletAddressForm from './sub-component/walletAddressForm';
+import Wallets from './sub-component/wallets'
 
 const Home = () => {
     useEffect(() => {
@@ -11,6 +12,7 @@ const Home = () => {
 
     return <>
         <WalletAddressForm/>
+        <Wallets/>
     </>;
 }
 
